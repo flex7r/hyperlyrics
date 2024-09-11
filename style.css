@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@font-face {
+    font-family: "Minecraft";
+    src: url("fonts/minecraft.ttf");
+}
+
+@font-face {
+    font-family: "Palatino Linotype";
+    src: url("fonts/pala.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* user-select: none; */
+}
+
+::selection {
+    background-color: rgba(160, 160, 160, 0.1);
+    color: rgb(232, 169, 50);
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+p,
+a,
+div, ol, li, ul {
+    color: black;
+    font-size: 24px;
+    font-family: Inter, Montserrat, Arial;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: 50px;
+    background-color: rgba(245, 245, 245, 50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    z-index: 1488;
+}
+
+.logo {
+    display: flex;
+    font-size: 32px;
+    font-family: "Palatino Linotype", Montserrat, Arial;
+    padding: 7px;
+}
+
+.logo img {
+    height: 36px;
+    transition: filter .5s ease-out;
+}
+
+.logo img:hover {
+    filter: drop-shadow(0 0px 4px rgb(255, 255, 255));
+}
+
+#search-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 100%);
+    padding: 4px 8px;
+    width: clamp(240px, 25vw, 480px);
+
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: 0 auto;
+}
+
+
+#search-bar input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 5px;
+    flex-grow: 1;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 75%);
+}
+
+#search-bar input::placeholder {
+    color: rgba(0, 0, 0, 30%);
+}
+
+#search-bar button {
+    border: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#search-bar button img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+
+    transition: transform 3s ease-in-out;
+}
+
+#search-bar button img:hover {
+    transform: rotate(3600deg);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+#release-info {
+    margin-top: -50px;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%), url(src/back.png);
+    background-position-y: -150px;
+    background-size: cover;
+    padding: 72px 0 32px 16vw;
+    height: auto;
+
+    display: flex;
+    gap: 32px;
+}
+
+#release-info #text *{
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 25%));
+    margin-bottom: 8px;
+}
+
+#release-info h1, h2, h3 {
+    color: whitesmoke;
+}
+
+#release-info img#cover {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 25%));
+    border: 2px solid rgba(255, 255, 255, 50%);
+    margin-bottom: -64px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 0.2fr 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    padding: 32px 0;
+}
+
+.lyrics {
+    font-size: 22px;
+    font-family: Inter;
+}
+
+.decoration-container {
+    overflow: hidden;
+}
+
+.decoration-container .decoration {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+footer {
+    border-top: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 4px 16px;
+}
+
+footer h3 {
+    color: rgb(60, 60, 60);
+    font-size: 12px;
+}
+
+.current {
+    background-color: rgb(70 70 70);
+    padding: 2px 4px;
+    color: white;
+    text-decoration: none;
+}
+
+.annotation {
+    background-color: rgb(243 230 186);
+    padding: 2px 4px;
+    cursor: pointer;
+    transition: background-color .1s ease-out;
+}
+
+.annotation:hover {
+    background-color: rgb(233, 196, 39);
+}
+
+.album-track-list {
+    width: clamp(200px, 5vw, 360px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    padding: 8px;
+    padding-left: 24px;
+
+    margin-left: 16px;
+    margin-top: 64px;
+
+    position: sticky;
+    float: left;
+    top: 64px;
+    left: 16px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    /* filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 25%)); */
+    border: 1px solid rgb(255, 255, 255);
+
+    z-index: 1487;
+}
+
+.album-track-list h3 a {
+    color: black;
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+
+.album-track-list ol li, ol li a {
+    font-size: 16px;
+    line-height: 1.3rem;
+}
+
+
+
+#large-logo {
+    margin-top: -50px;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 0;
+
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url(src/back.png);
+    background-position-y: -150px;
+    background-size: cover;
+}
+
+#large-logo img {
+    width: 30vw;
+    min-width: 300px;
+}
+
+#large-logo h3 {
+    margin-top: 8px;
+    font-size: 24px;
+    font-weight: 100;
+    font-family: "Palatino Linotype";
+}
+
+#releases-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 12px;
+
+}
+
+#releases-grid h3 {
+    color: black;
+    font-size: 24px;
+    font-family: "Palatino Linotype";
+    margin: 8px 0;
+}
+
+.flex-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+/* @media screen and (max-width: 1366px) {
+    .flex-cards {
+        justify-content: space-evenly;
+    }
+    .card {
+        width: 20vw;
+    }
+} */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 85px;
+    padding: 8px;
+    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 25%));
+    border: 2px solid rgba(255, 255, 255, 50%);
+}
+
+.card h3 {
+    font-size: 24px;
+}
+
+.card h4 {
+    font-size: 18px;
+}
+
+.card hr {
+    width: 100%;
+    height: 2px;
+    color: grey;
+}
+
+.card img {
+    width: 100%;
+    margin-bottom: 4px;
+}
