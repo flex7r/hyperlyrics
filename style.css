@@ -16,6 +16,10 @@
     /* user-select: none; */
 }
 
+/* * {
+    outline: 1px solid #f00 !important;
+} */
+
 ::selection {
     background-color: rgba(160, 160, 160, 0.1);
     color: rgb(232, 169, 50);
@@ -28,7 +32,7 @@ body {
 h1,
 h2,
 h3,
-h4,
+h4, h5,
 button,
 p,
 a,
@@ -65,6 +69,13 @@ header {
     align-items: center;
     padding: 8px 16px;
     z-index: 1488;
+    /* width: 100vw; */
+}
+
+@media screen and (max-width: 768px) {
+    a>.logo {
+        display: none;
+    }
 }
 
 .logo {
@@ -89,13 +100,13 @@ header {
     background-color: rgba(240, 240, 240, 100%);
     padding: 4px 8px;
     width: clamp(240px, 25vw, 480px);
+    gap: 8px;
 
-    left: 0;
+    /* left: 0;
     right: 0;
     position: absolute;
-    margin: 0 auto;
+    margin: 0 auto; */
 }
-
 
 #search-bar input {
     border: none;
@@ -105,6 +116,7 @@ header {
     flex-grow: 1;
     font-size: 15px;
     color: rgba(0, 0, 0, 75%);
+    width: 100%;
 }
 
 #search-bar input::placeholder {
@@ -139,23 +151,30 @@ header {
     cursor: pointer;
 }
 
+.user-profile h5{
+    font-size: 12px;
+    font-weight: 600;
+}
+
 .user-profile img {
     width: 32px;
     height: 32px;
     object-fit: cover;
-    border-radius: 100%;
+    /* border-radius: 100%; */
 }
 
 #release-info {
     margin-top: -50px;
-    background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%), url(src/back.png);
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%), url(src/back.png);
     background-position-y: -150px;
     background-size: cover;
-    padding: 72px 0 32px 16vw;
+    padding: 72px 2vw 32px 12vw;
     height: auto;
 
     display: flex;
     gap: 32px;
+
+    /* width: 100vw; */
 }
 
 #release-info #text *{
@@ -163,7 +182,7 @@ header {
     margin-bottom: 8px;
 }
 
-#release-info h1, h2, h3 {
+#release-info h1, h2, h3, a {
     color: whitesmoke;
 }
 
@@ -175,6 +194,19 @@ header {
     border: 2px solid rgba(255, 255, 255, 50%);
     margin-bottom: -64px;
 }
+
+@media screen and (max-width: 1024px) {
+    #release-info {
+        flex-wrap: wrap;
+        padding: 72px 2vw 32px 2vw;
+    }
+
+    #release-info img#cover {
+        margin-bottom: 0;
+        margin: 0 auto;
+    }
+}
+
 
 #grid {
     display: grid;
@@ -189,7 +221,12 @@ header {
 .lyrics {
     font-size: 22px;
     font-family: Inter;
+    min-width: 80vw;
+    /* white-space: pre;
+    word-break: break-all; */
 }
+
+
 
 .decoration-container {
     overflow: hidden;
@@ -271,22 +308,34 @@ footer h3 {
 .album-track-list ol li, ol li a {
     font-size: 16px;
     line-height: 1.3rem;
+    color: black;
 }
+
+@media screen and (max-width: 768px) {
+    .album-track-list {
+        display: none;
+    }
+}
+
+
+
+
+
 
 
 
 #large-logo {
     margin-top: -50px;
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 64px 0;
 
-    background-image: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url(src/back.png);
+    /* background-image: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url(src/back.png);
     background-position-y: -150px;
-    background-size: cover;
+    background-size: cover; */
 }
 
 #large-logo img {
@@ -298,7 +347,9 @@ footer h3 {
     margin-top: 8px;
     font-size: 24px;
     font-weight: 100;
+    color: black;
     font-family: "Palatino Linotype";
+    text-align: center;
 }
 
 #releases-grid {
@@ -332,11 +383,21 @@ footer h3 {
     }
 } */
 
+@media screen and (max-width: 425px) {
+    .flex-cards, #releases-grid {
+        padding: 0;
+    }
+
+    .user-profile h5 {
+        display: none;
+    }
+}
+
 .card {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    width: 85px;
+    width: 256px;
     padding: 8px;
     filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 25%));
     border: 2px solid rgba(255, 255, 255, 50%);
