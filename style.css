@@ -215,13 +215,13 @@ header {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 
-    padding: 32px 0;
+    padding: 48px 0;
 }
 
 .lyrics {
     font-size: 22px;
     font-family: Inter;
-    min-width: 80vw;
+    width: clamp(320px, 80vw, 720px);
     /* white-space: pre;
     word-break: break-all; */
 }
