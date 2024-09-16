@@ -35,3 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
         placeRandomShapes(container);
     });
 });
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.style.backdropFilter = 'blur(5px)';
+        header.style.backgroundColor = 'rgba(245, 245, 245, 50%)';
+    } else {
+        header.style.backdropFilter = 'blur(0)';
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+    }
+});

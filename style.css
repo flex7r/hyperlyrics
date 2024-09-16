@@ -59,8 +59,8 @@ h3 {
 header {
     position: sticky;
     top: 0;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
     height: 50px;
     background-color: rgba(245, 245, 245, 50%);
     display: flex;
@@ -70,6 +70,8 @@ header {
     padding: 8px 16px;
     z-index: 1488;
     /* width: 100vw; */
+
+    transition: backdrop-filter .7s ease-in-out, background-color .7s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
@@ -229,7 +231,8 @@ header {
 
 
 .decoration-container {
-    overflow: hidden;
+    overflow: visible;
+    z-index: -1;
 }
 
 .decoration-container .decoration {
@@ -422,6 +425,7 @@ marquee {
     padding: 8px;
     filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 25%));
     border: 2px solid rgba(255, 255, 255, 50%);
+    backdrop-filter: blur(30px);
 }
 
 .card h3 {
